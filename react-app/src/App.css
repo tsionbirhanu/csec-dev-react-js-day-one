@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(to right, #1a1a2e, #2c2c54, #1a1a2e);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
+.react-section{
+  border:1px solid rgba(192, 47, 224, 0.763);
+  width:500px;
+  margin-right:30px;
+  margin-top: 60px;
+  border-radius:10px;
+  padding:20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.react-section h2{
+  text-align: center;
+}
+.tailwind-section{
+  border:1px solid rgba(192, 47, 224, 0.763);
+  width:500px;
+  margin-left: 20px;
+  margin-top: 60px;
+  border-radius:10px;
+  padding:20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.tailwind-section h2{
+  text-align: center;
+}
