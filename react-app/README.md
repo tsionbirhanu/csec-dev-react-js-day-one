@@ -1,5 +1,3 @@
-# React + Tailwind
-
 # React & Tailwind CSS Introduction
 
 Welcome to our **React & Tailwind Bootcamp Session**! 🚀 This project provides an introductory guide to **React.js** and **Tailwind CSS**, covering their core concepts and benefits through an interactive example.
