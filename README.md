@@ -17,5 +17,7 @@ Understand the key features of both technologies.
 React.js - A JavaScript library for building user interfaces.
 
 Tailwind CSS - A utility-first CSS framework for rapid UI development.
+
 📷 Example of the Page
-![Uploading Screenshot_3-2-2025_8382_localhost.jpeg…]()
+![Screenshot_3-2-2025_8382_localhost](https://github.com/user-attachments/assets/c5b19cd8-e355-4e54-95b8-8c74c73b6ce7)
+
