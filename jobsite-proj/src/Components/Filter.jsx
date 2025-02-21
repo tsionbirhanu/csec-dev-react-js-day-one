@@ -65,7 +65,7 @@ const Filter = ({
   };
 
   return (
-    <div className="w-[100%] max-w-[300px] rounded-lg bg-white shadow-lg p-6">
+    <div className="w-[90%] max-w-[300px] rounded-lg bg-white shadow-lg p-6">
       <h2 className="text-xl font-bold mb-4">Filter</h2>
 
       {/* Date Posted */}

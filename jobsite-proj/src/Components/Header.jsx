@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/JobLogo.svg';
 const Header = () => {
+  const navigate = useNavigate (); 
+
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <img src={Logo} className="bg-blue-700 text-xl font-bold w-[149px] h-[52px] p-1 rounded"/>
+            <img src={Logo} onClick={()=>navigate("/Home")} className="bg-blue-700 text-xl font-bold w-[149px] h-[52px] p-1 rounded"/>
           </div>
 
           <div className="flex space-x-5">
