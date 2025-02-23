@@ -14,7 +14,7 @@ const Search = ({ query, setQuery, deferredQuery, filteredQuery }) => {
   return (
     <div className="ml-[370px] flex rounded-[12px] w-[560px] h-[7px] p-6 shadow-md items-center">
       <div className="w-[350px] h-[10px] flex items-center ">
-        <CiSearch className="w-[28px] h-[15px] text-[#000000] -ml-5" />
+        <CiSearch className="w-[29px] h-[15px] text-[#000000] -ml-5" />
         <input
           type="text"
           placeholder="Job title, Keywords, or Company name"
