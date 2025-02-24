@@ -1,10 +1,10 @@
 
-import fd from '../assets/empirekitchen.png';
-import Pd from '../assets/flower.png';
-import vk from '../assets/vk.png';
+import image1 from '../assets/image1.png';
+import image2 from '../assets/image2.png';
+import image3 from '../assets/image3.png';
 const job = [
         {   
-            logo: Pd, 
+            logo: image1, 
             title: "Product Designer",
             company: "Binford Ltd",
             type: "Remote",
@@ -14,7 +14,7 @@ const job = [
             isbookmarked: false
         },
         {
-            logo: fd,
+            logo: image2,
             title: "Frontend Developer",
             company: "TechWave",
             type: "Hybrid",
@@ -24,7 +24,7 @@ const job = [
             isbookmarked: false
         },
         {
-            logo: vk,
+            logo: image3,
             title: "Digital Marketing Specialist",
             company: "Big Kahuna Burger Ltd",
             type: "Remote",

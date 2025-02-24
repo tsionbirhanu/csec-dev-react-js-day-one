@@ -3,6 +3,7 @@ import Feed from '../Components/Feed';
 import Filter from '../Components/Filter';
 import Pagination from '../Components/Pagination';
 import Search from '../Components/Search';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [jobs, setJobs] = useState([]);
@@ -40,7 +41,7 @@ function Home() {
           `https://joblisting-rd8f.onrender.com/api/jobs?${params}`
         );
         const data = await response.json();
-        
+
         if (!response.ok) throw new Error(data.message || "Failed to fetch");
         
         setJobs(data.jobs || []);
@@ -55,7 +56,7 @@ function Home() {
     };
 
     fetchJobs();
-  }, [currentPage, searchQuery, locationQuery, filters, jobTypes]); // Add jobTypes to the dependency array
+  }, [currentPage, searchQuery, locationQuery, filters, jobTypes]); 
 
   const handleSearch = (query, location) => {
     setSearchQuery(query);

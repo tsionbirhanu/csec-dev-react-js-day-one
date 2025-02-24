@@ -1,7 +1,7 @@
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const getVisiblePages = () => {
     const visiblePages = [];
-    const maxVisible = 5; // Maximum number of visible page buttons
+    const maxVisible = 5; 
     let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
     let end = Math.min(totalPages, start + maxVisible - 1);
 
@@ -29,7 +29,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         Prev
       </button>
 
-      {/* Show first page and ellipsis if needed */}
       {visiblePages[0] > 1 && (
         <>
           <button
@@ -43,7 +42,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         </>
       )}
 
-      {/* Visible Page Buttons */}
       {visiblePages.map((page) => (
         <button
           key={page}
@@ -54,7 +52,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         </button>
       ))}
 
-      {/* Show last page and ellipsis if needed */}
       {visiblePages[visiblePages.length - 1] < totalPages && (
         <>
           {visiblePages[visiblePages.length - 1] < totalPages - 1 && (

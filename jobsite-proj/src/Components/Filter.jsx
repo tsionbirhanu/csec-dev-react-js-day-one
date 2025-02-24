@@ -52,7 +52,6 @@ const Filter = ({
     );
   };
 
-  // Reset all filters
   const handleResetFilters = () => {
     setRange({ min: minLimit, max: maxLimit });
     setDatePosted("Last 24 Hours");
@@ -64,11 +63,10 @@ const Filter = ({
     if (onResetFilters) onResetFilters();
   };
 
-  return (
+  return ( 
     <div className="w-[90%] max-w-[300px] rounded-lg bg-white shadow-lg p-6">
-      <h2 className="text-xl font-bold mb-4">Filter</h2>
+      <h2 className="text-xl font-bold mb-4 ">Filter</h2>
 
-      {/* Date Posted */}
       <div className="mb-4">
         <h3 className="text-lg font-semibold mb-2">Date Posted</h3>
         <select
@@ -82,7 +80,6 @@ const Filter = ({
         </select>
       </div>
 
-      {/* Job Type */}
       <div className="mb-4">
         <h3 className="text-lg font-semibold mb-2">Job Type</h3>
         {["Full-time", "Hybrid", "Internship", "Contract", "Volunteer", "Remote"].map((type) => (
@@ -98,7 +95,6 @@ const Filter = ({
         ))}
       </div>
 
-      {/* Location */}
       <div className="mb-4">
         <h3 className="text-lg font-semibold mb-2">Location</h3>
         <div className="flex items-center border border-gray-300 rounded-lg p-2">
@@ -113,7 +109,6 @@ const Filter = ({
         </div>
       </div>
 
-      {/* Experience Level */}
       <div className="mb-4">
         <h3 className="text-lg font-semibold mb-2">Experience Level</h3>
         <select
@@ -127,7 +122,6 @@ const Filter = ({
         </select>
       </div>
 
-      {/* Salary Range */}
       <div className="mb-4">
         <h3 className="text-lg font-semibold mb-2">Salary Range ($)</h3>
         <div className="relative w-full">
@@ -168,7 +162,6 @@ const Filter = ({
         </div>
       </div>
 
-      {/* Currency */}
       <div className="mb-4">
         <h3 className="text-lg font-semibold mb-2">Currency</h3>
         <select

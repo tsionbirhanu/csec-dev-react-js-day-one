@@ -22,7 +22,7 @@ const Feed = ({ jobs, setCurrentPage, totalPages ,jobTypes}) => {
 
     return (
         <div className="flex justify-center gap-8 p-8">
-        <div className="min-w-[628px] min-h-[750px] p-6 rounded-lg ">
+        <div className="min-w-[628px] min-h-[223px] p-6 rounded-lg ">
           {jobs?.length > 0 ? (
             jobs.map((job, index) => (
                         <div key={index} className="bg-white p-4 rounded-lg shadow-md min-w-[628px] min-h-[223px] mb-4" on>
@@ -66,21 +66,20 @@ const Feed = ({ jobs, setCurrentPage, totalPages ,jobTypes}) => {
                 )}
             </div>
 
-            <div className="bg-white min-w-[300px] p-6 rounded-lg shadow-md">
-                <h2 className="text-2xl font-semibold mb-4">Saved Jobs</h2>
+            <div className="bg-white min-w-[250px] h-[730px] p-6 rounded-lg shadow-md ml-4 mr-3">
+                <h2 className=" font-bold mb-1 ml-6 text-[25px]">Saved Jobs</h2>
                 {savedMessages.length > 0 ? (
                     savedMessages.map((job, index) => (
-                        <div key={index} className="bg-white w-full mb-3 p-3 rounded-lg flex flex-col shadow-md">
-                            <div className="flex justify-between items-center">
-                                <h2 className="text-[18px] font-bold">{job.title}</h2>
+                        <div key={index} className="bg-white w-[215px] mb-3 p-3 rounded-lg flex flex-col shadow-md items-center">
+                            <div className="flex justify-between items-center ml-3 ">
+                                <h2 className="text-[18px] font-semibold">{job.title}</h2>
                                 <button onClick={() => toggleBookmark(job)}>
                                     <IoMdClose size={20} className="text-black cursor-pointer" />
                                 </button>
                             </div>
-                            <p className="text-gray-600">{job.company}</p>
-                            <div className="flex gap-2">
+                            <p className="text-gray-600 mr-26">{job.company}</p>
+                            <div className="flex gap-2 mr-6">
                                 <div className="bg-gray-200 rounded-sm px-2 py-1 text-sm">{job.type}</div>
-                                <div className="bg-gray-200 rounded-sm px-2 py-1 text-sm">{job.time}</div>
                                 <div className="bg-gray-200 rounded-sm px-2 py-1 text-sm">{job.salary}</div>
                             </div>
                         </div>

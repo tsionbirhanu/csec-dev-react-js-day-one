@@ -2,30 +2,28 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import Description from './pages/Description';
 import Home from "./pages/Home";
-import Login from "./pages/LoginPage";
-import Signup from "./pages/Signup";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
+import { Link } from 'react-router-dom';
+import JobPost from './Components/JobPost';
+import PostedJobs from './pages/PostedJobs';
 
 const App = () => {
   return (
     <div>
-      <div><BrowserRouter>
-      <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element = {<Home/>}/>
-         <Route path="/LoginPage" element={<Login/>} />
-         <Route path="/SignUp" element={<Signup/>} />
-         <Route path="/Description" element={<Description/>} />
-      </Route>
-      </Routes>
-      </BrowserRouter></div>
-      <div>
-        
-      </div>
-      
-    </div>
-    
-   
-   
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/jobs/:id" element={<Description />} />
+            <Route path="/post-job" element={<JobPost />} />
+            <Route path="/posted-jobs" element={<PostedJobs />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div> 
   );
 };
 

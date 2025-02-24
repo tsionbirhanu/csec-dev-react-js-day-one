@@ -2,12 +2,15 @@ import { useFormik } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import apple from "../assets/logo/Apple.png"
+import apple from "../assets/logo/Apple.png";
 import facebook from "../assets/logo/Facebook.png";
 import google from "../assets/logo/Google.png";
 import Linkedln from "../assets/logo/LinkedIn.png";
 import logo1 from "../assets/JobLogo.svg";
 import teamwork from "../assets/teamwork.svg";
+import { IoMdContact } from "react-icons/io";
+import { CiMail } from "react-icons/ci";
+import { CiLock } from "react-icons/ci";
 
 const Signup = () => {
   const validationSchema = Yup.object({
@@ -51,15 +54,15 @@ const Signup = () => {
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-10 py-10">
-      <div className="bg-white  p-8 w-[466px] h-[907px] left-[267px] top-[105px] gap-[42px]">
+      <div className="bg-white p-8 w-[466px] h-[907px] left-[267px] top-[105px] gap-[42px]">
         <div className="flex justify-center mb-6 bg-blue-800 w-[128px] rounded-[5px] p-2">
           <img src={logo1} alt="Logo" className="w-24" />
         </div>
         <h3 className="font-bold text-2xl mb-4">Create your account</h3>
 
         <form onSubmit={formik.handleSubmit}>
-
-          <div className="mb-4">
+          <div className="mb-4 relative">
+            <IoMdContact className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               name="firstName"
@@ -67,14 +70,15 @@ const Signup = () => {
               value={formik.values.firstName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className={`border rounded-md p-2 w-full ${formik.touched.firstName && formik.errors.firstName ? 'border-red-500' : 'border-gray-300'}`}
+              className={`border rounded-md p-2 w-full pl-10 ${formik.touched.firstName && formik.errors.firstName ? 'border-red-500' : 'border-gray-300'}`}
             />
             {formik.touched.firstName && formik.errors.firstName && (
               <div className="text-red-500 text-sm">{formik.errors.firstName}</div>
             )}
           </div>
 
-          <div className="mb-4">
+          <div className="mb-4 relative">
+            <IoMdContact className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               name="lastName"
@@ -82,15 +86,15 @@ const Signup = () => {
               value={formik.values.lastName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className={`border rounded-md p-2 w-full ${formik.touched.lastName && formik.errors.lastName ? 'border-red-500' : 'border-gray-300'}`}
+              className={`border rounded-md p-2 w-full pl-10 ${formik.touched.lastName && formik.errors.lastName ? 'border-red-500' : 'border-gray-300'}`}
             />
             {formik.touched.lastName && formik.errors.lastName && (
               <div className="text-red-500 text-sm">{formik.errors.lastName}</div>
             )}
           </div>
 
-      
-          <div className="mb-4">
+          <div className="mb-4 relative">
+            <CiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               name="email"
@@ -98,14 +102,15 @@ const Signup = () => {
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className={`border rounded-md p-2 w-full ${formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'}`}
+              className={`border rounded-md p-2 w-full pl-10 ${formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'}`}
             />
             {formik.touched.email && formik.errors.email && (
               <div className="text-red-500 text-sm">{formik.errors.email}</div>
             )}
           </div>
 
-          <div className="mb-4">
+          <div className="mb-4 relative">
+            <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="password"
               name="password"
@@ -113,14 +118,15 @@ const Signup = () => {
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className={`border rounded-md p-2 w-full ${formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'}`}
+              className={`border rounded-md p-2 w-full pl-10 ${formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'}`}
             />
             {formik.touched.password && formik.errors.password && (
               <div className="text-red-500 text-sm">{formik.errors.password}</div>
             )}
           </div>
 
-          <div className="mb-6">
+          <div className="mb-6 relative">
+            <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="password"
               name="confirmPassword"
@@ -128,14 +134,13 @@ const Signup = () => {
               value={formik.values.confirmPassword}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className={`border rounded-md p-2 w-full ${formik.touched.confirmPassword && formik.errors.confirmPassword ? 'border-red-500' : 'border-gray-300'}`}
+              className={`border rounded-md p-2 w-full pl-10 ${formik.touched.confirmPassword && formik.errors.confirmPassword ? 'border-red-500' : 'border-gray-300'}`}
             />
             {formik.touched.confirmPassword && formik.errors.confirmPassword && (
               <div className="text-red-500 text-sm">{formik.errors.confirmPassword}</div>
             )}
           </div>
 
-      
           <button
             type="submit"
             className="w-full h-12 rounded-md bg-[#0034D1] text-white font-medium text-lg hover:bg-blue-700 transition duration-200"
@@ -143,14 +148,12 @@ const Signup = () => {
             Create account
           </button>
         </form>
-
         <div className="flex justify-between items-center mt-6">
           <hr className="flex-grow border-gray-300" />
           <h4 className="mx-4 text-gray-600">OR</h4>
           <hr className="flex-grow border-gray-300" />
         </div>
 
- 
         <div className="flex gap-8 mt-4">
           <img src={google} alt="Google icon" className="w-[56px] cursor-pointer" />
           <img src={apple} alt="Apple icon" className="w-[56px] cursor-pointer" />
@@ -160,11 +163,12 @@ const Signup = () => {
 
         <div className="flex justify-center mt-6">
           <h4 className="font-bold">Already have an account?</h4>
-          <Link to="LoginPage" className="text-blue-600 ml-2 hover:underline">
+          <Link to="/login" className="text-blue-600 ml-2 hover:underline">
             Login
           </Link>
         </div>
       </div>
+
       <div className="hidden md:block bg-[#F2F2F2] h-[700px] w-[800px] ml-5 rounded-lg overflow-hidden">
         <img src={teamwork} alt="teamwork" />
       </div>

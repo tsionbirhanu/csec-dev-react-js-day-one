@@ -141,9 +141,9 @@ const JobPost = () => {
     const job = {
       title: form1.title.trim(),
       type: form1.type,
-      salary: parseFloat(form1.salary), // Convert salary to a number
+      salary: parseFloat(form1.salary), 
       description: form1.description.trim(),
-      company: form2.company.trim(), // Trim extra spaces
+      company: form2.company.trim(), 
       location: form2.location.trim(),
       experienceLevel: form2.experienceLevel,
       currency: form2.currency,
@@ -151,7 +151,7 @@ const JobPost = () => {
       isBookMarked: false,
     };
   
-    console.log("Submitting job:", job); // Log the payload
+    console.log("Submitting job:", job);
   
     setIsSubmitting(true);
     setErrorMessage('');

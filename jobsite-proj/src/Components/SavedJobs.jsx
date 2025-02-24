@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 
 const SavedJobs = ({ savedMessages, removeSavedJob }) => {
   return (
+    <div className="ml-4"> 
     <div className='bg-white min-w-[250px] flex flex-col items-center p-4 shadow-lg rounded-lg'>
         <h1 className="text-xl font-bold mb-4">Saved Jobs</h1>
         {savedMessages.length > 0 ? (
@@ -20,6 +21,7 @@ const SavedJobs = ({ savedMessages, removeSavedJob }) => {
         ) : (
             <p className="text-gray-500">No saved jobs yet.</p>
         )}
+    </div>
     </div>
   );
 };
