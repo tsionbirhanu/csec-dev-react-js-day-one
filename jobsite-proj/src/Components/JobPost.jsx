@@ -151,26 +151,44 @@ const JobPost = () => {
       isBookMarked: false,
     };
   
-    console.log("Submitting job:", job);
+    console.log("Submitting job:", job); // Debugging log
   
     setIsSubmitting(true);
     setErrorMessage('');
     setSuccessMessage('');
   
     try {
-      const response = await axios.post('https://joblisting-rd8f.onrender.com/api/jobs', job);
-      console.log('Job posted successfully:', response.data);
+      const response = await fetch(
+        "https://joblisting-3hjv.onrender.com/api/jobs",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(job),
+        }
+      );
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("API Error Response:", errorData);
+        throw new Error(errorData.message || "Failed to post job.");
+      }
+  
+      const data = await response.json();
+      console.log("Job posted successfully:", data);
   
       addPostedJob(job);
       resetForm();
-      setSuccessMessage('Job posted successfully!');
+      setSuccessMessage("Job posted successfully!");
     } catch (error) {
-      console.error('Error posting job:', error);
-      setErrorMessage('Failed to post job. Please try again.');
+      console.error("Error posting job:", error.message);
+      setErrorMessage(`Failed to post job: ${error.message}`);
     } finally {
       setIsSubmitting(false);
     }
   };
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
