@@ -38,7 +38,7 @@ function Home() {
         });
 
         const response = await fetch(
-          `https://joblisting-rd8f.onrender.com/api/jobs?${params}`
+          `https://joblisting-3hjv.onrender.com/api/jobs?${params}`
         );
         const data = await response.json();
 

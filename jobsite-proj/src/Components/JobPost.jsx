@@ -13,6 +13,8 @@ const Form1 = ({ next }) => {
     type: yup.string().required('Job type is required'),
     salary: yup.number().required('Salary is required').positive('Salary must be a positive number'),
     description: yup.string().required('Description is required'),
+    company:yup.string().required('company is required'),
+    
   });
 
   return (
@@ -151,7 +153,7 @@ const JobPost = () => {
       isBookMarked: false,
     };
   
-    console.log("Submitting job:", job); // Debugging log
+    console.log("Submitting job:", job); 
   
     setIsSubmitting(true);
     setErrorMessage('');
@@ -169,15 +171,15 @@ const JobPost = () => {
         }
       );
   
+      const responseData = await response.json();
+      console.log("API Response Data:", responseData);
+  
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error("API Error Response:", errorData);
-        throw new Error(errorData.message || "Failed to post job.");
+        console.error("API Error:", responseData);
+        throw new Error(responseData.error || "Failed to post job.");
       }
   
-      const data = await response.json();
-      console.log("Job posted successfully:", data);
-  
+      console.log("Job posted successfully:", responseData);
       addPostedJob(job);
       resetForm();
       setSuccessMessage("Job posted successfully!");
@@ -188,6 +190,7 @@ const JobPost = () => {
       setIsSubmitting(false);
     }
   };
+  
   
 
   return (

@@ -19,7 +19,6 @@ const Filter = ({
     max: maxLimit
   });
 
-  // Handle all filter changes
   useEffect(() => {
     onFilterChange({ 
       minValue: range.min, 
@@ -32,7 +31,6 @@ const Filter = ({
     });
   }, [range, jobTypes, experienceLevel, currency, location, datePosted]);
 
-  // Salary range handlers
   const handleMinChange = (e) => {
     const value = Math.min(Number(e.target.value), range.max - 20);
     setRange(prev => ({ ...prev, min: value }));
@@ -43,7 +41,7 @@ const Filter = ({
     setRange(prev => ({ ...prev, max: value }));
   };
 
-  // Job type checkbox handler
+
   const handleJobTypeChange = (type) => {
     setJobTypes(prev => 
       prev.includes(type) 
